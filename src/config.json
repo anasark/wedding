@@ -1,0 +1,61 @@
+{
+  "groom": {
+    "name": "Anas",
+    "parentOf": "Putra dari",
+    "parents": "Bpk. Ahmad & Ibu Fatimah"
+  },
+  "bride": {
+    "name": "Rizka",
+    "parentOf": "Putri dari",
+    "parents": "Bpk. Ibrahim & Ibu Khadijah"
+  },
+  "date": "Sabtu, 20 Juni 2026",
+  "dateShort": "20 · 06 · 2026",
+  "countdownTarget": "2026-06-20T08:00:00",
+  "quote": {
+    "text": "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.",
+    "source": "QS. Ar-Rum 30:21"
+  },
+  "events": [
+    {
+      "title": "Akad Nikah",
+      "icon": "heart",
+      "date": "Sabtu, 20 Juni 2026",
+      "time": "08.00 — 10.00 WIB",
+      "location": "Masjid Agung",
+      "mapsUrl": "https://maps.google.com"
+    },
+    {
+      "title": "Resepsi",
+      "icon": "sparkles",
+      "date": "Sabtu, 20 Juni 2026",
+      "time": "11.00 — 14.00 WIB",
+      "location": "Gedung Rose Garden",
+      "mapsUrl": "https://maps.google.com"
+    }
+  ],
+  "gift": {
+    "bankName": "Bank Central Asia (BCA)",
+    "accountNumber": "1234 5678 9012",
+    "accountNumberRaw": "123456789012",
+    "accountHolder": "Anas"
+  },
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sNational%20Monument!5e0!3m2!1sen!2sid!4v1635724710648!5m2!1sen!2sid",
+  "initialWishes": [
+    {
+      "id": 1,
+      "name": "Ahmad",
+      "message": "Semoga kalian berdua bahagia selamanya! Semoga perjalanan bersama dipenuhi momen-momen indah."
+    },
+    {
+      "id": 2,
+      "name": "Nadia",
+      "message": "Selamat atas pernikahannya! Kalian sangat cocok satu sama lain. Kirim cinta terbaikku!"
+    },
+    {
+      "id": 3,
+      "name": "Omar",
+      "message": "Semoga Allah memberkahi pernikahan kalian dengan cinta, kebahagiaan, dan keberkahan. Selamat menikah!"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<?php
+
+declare(strict_types=1);
+
+function env_value(string $key, ?string $default = null): ?string
+{
+    $value = getenv($key);
+
+    if ($value === false || $value === '') {
+        return $default;
+    }
+
+    return $value;
+}
+
+function allow_cors(): void
+{
+    $allowedOrigin = env_value('FRONTEND_ORIGIN', '*');
+
+    header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: ' . $allowedOrigin);
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+
+    if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'OPTIONS') {
+        http_response_code(204);
+        exit;
+    }
+}
+
+function json_response(array $payload, int $statusCode = 200): void
+{
+    http_response_code($statusCode);
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
+function request_json(): array
+{
+    $rawBody = file_get_contents('php://input');
+
+    if ($rawBody === false || $rawBody === '') {
+        return [];
+    }
+
+    $decoded = json_decode($rawBody, true);
+
+    return is_array($decoded) ? $decoded : [];
+}
+
+function db(): PDO
+{
+    static $pdo = null;
+
+    if ($pdo instanceof PDO) {
+        return $pdo;
+    }
+
+    $host = env_value('DB_HOST', '127.0.0.1');
+    $port = env_value('DB_PORT', '3306');
+    $database = env_value('DB_DATABASE', 'wedding');
+    $username = env_value('DB_USERNAME', 'wedding_user');
+    $password = env_value('DB_PASSWORD', 'wedding_password');
+
+    $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $database);
+
+    $pdo = new PDO($dsn, $username, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
+
+    return $pdo;
+}
+
+function method_not_allowed(): void
+{
+    json_response(['message' => 'Method not allowed'], 405);
+}
+
+function validation_error(string $message): void
+{
+    json_response(['message' => $message], 422);
+}

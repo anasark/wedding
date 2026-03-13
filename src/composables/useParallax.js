@@ -37,8 +37,13 @@ export function useParallax(elementRef, { maxOffset = 36, axis = 'y', reverse = 
 
     reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     updateParallax()
+
+    const snapContainer = document.querySelector('.snap-container')
     window.addEventListener('scroll', updateParallax, { passive: true })
     window.addEventListener('resize', updateParallax)
+    if (snapContainer) {
+      snapContainer.addEventListener('scroll', updateParallax, { passive: true })
+    }
   })
 
   onUnmounted(() => {
@@ -46,8 +51,12 @@ export function useParallax(elementRef, { maxOffset = 36, axis = 'y', reverse = 
       return
     }
 
+    const snapContainer = document.querySelector('.snap-container')
     window.removeEventListener('scroll', updateParallax)
     window.removeEventListener('resize', updateParallax)
+    if (snapContainer) {
+      snapContainer.removeEventListener('scroll', updateParallax)
+    }
   })
 
   return { parallaxStyle }

@@ -1,17 +1,19 @@
 {
   "groom": {
-    "name": "Anas",
+    "name": "Anas Abdur Rohim",
+    "nickname": "Anas",
     "parentOf": "Putra dari",
-    "parents": "Bpk. Ahmad & Ibu Fatimah"
+    "parents": "Bpk. Turhan Faqih (Alm) & Ibu Juwariyah"
   },
   "bride": {
-    "name": "Rizka",
+    "name": "Rizka Amaliyah Maghfiroh",
+    "nickname": "Rizka",
     "parentOf": "Putri dari",
-    "parents": "Bpk. Ibrahim & Ibu Khadijah"
+    "parents": "Bpk. Sudjadi Zainal Abidin (Alm) & Ibu Siti Rohayati"
   },
-  "date": "Sabtu, 20 Juni 2026",
-  "dateShort": "20 · 06 · 2026",
-  "countdownTarget": "2026-06-20T08:00:00",
+  "date": "Sabtu, 28 Maret 2026",
+  "dateShort": "28 · 03 · 2026",
+  "countdownTarget": "2026-03-28T08:00:00",
   "quote": {
     "text": "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.",
     "source": "QS. Ar-Rum 30:21"
@@ -20,27 +22,41 @@
     {
       "title": "Akad Nikah",
       "icon": "heart",
-      "date": "Sabtu, 20 Juni 2026",
+      "date": "Rabu, 24 Desember 2026",
       "time": "08.00 — 10.00 WIB",
-      "location": "Masjid Agung",
-      "mapsUrl": "https://maps.google.com"
+      "location": "KUA Sukodadi",
+      "mapsUrl": "https://maps.app.goo.gl/X1HysmWotNA1WKPa7",
+      "calendarUrl": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad%20Nikah%20-%20Anas%20%26%20Rizka&dates=20261224T010000Z/20261224T030000Z&details=Akad%20Nikah%20Anas%20Abdur%20Rohim%20%26%20Rizka%20Amaliyah%20Maghfiroh&location=KUA%20Sukodadi"
     },
     {
       "title": "Resepsi",
       "icon": "sparkles",
-      "date": "Sabtu, 20 Juni 2026",
-      "time": "11.00 — 14.00 WIB",
-      "location": "Gedung Rose Garden",
-      "mapsUrl": "https://maps.google.com"
+      "date": "Sabtu, 28 Maret 2026",
+      "time": "10.00 WIB - Selesai",
+      "location": "German",
+      "mapsUrl": "https://maps.app.goo.gl/YfJ8b4rDxgtZX9Aw8",
+      "calendarUrl": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi%20Pernikahan%20-%20Anas%20%26%20Rizka&dates=20260328T030000Z/20260328T070000Z&details=Resepsi%20Pernikahan%20Anas%20Abdur%20Rohim%20%26%20Rizka%20Amaliyah%20Maghfiroh&location=German%2C%20Sugio%2C%20Lamongan"
     }
   ],
   "gift": {
-    "bankName": "Bank Central Asia (BCA)",
-    "accountNumber": "1234 5678 9012",
-    "accountNumberRaw": "123456789012",
-    "accountHolder": "Anas"
+    "accounts": [
+      {
+        "bankName": "Bank Central Asia (BCA)",
+        "accountNumber": "330 146 7646",
+        "accountNumberRaw": "3301467646",
+        "accountHolder": "Anas Abdur Rohim"
+      },
+      {
+        "bankName": "Bank Central Asia (BCA)",
+        "accountNumber": "330 073 3262",
+        "accountNumberRaw": "3300733262",
+        "accountHolder": "Rizka Amaliyah Maghfiroh"
+      }
+    ],
+    "address": "Jl. Tombro, Desa German, Kec. Sugio, Kab. Lamongan, Jawa Timur 62256"
   },
-  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sNational%20Monument!5e0!3m2!1sen!2sid!4v1635724710648!5m2!1sen!2sid",
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3958.548179055336!2d112.30191007583731!3d-7.178108992826859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTAnNDEuMiJTIDExMsKwMTgnMTYuMiJF!5e0!3m2!1sen!2sid!4v1773244292858!5m2!1sen!2sid",
+  "song": "/song.mp3",
   "initialWishes": [
     {
       "id": 1,

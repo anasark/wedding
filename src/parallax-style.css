@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Light Elegant Palette — Ivory, Sage, Dusty Rose, Warm Gold */
-  --color-deep: #faf8f5;
-  --color-deep-light: #f3efe9;
-  --color-forest: #eee9e0;
-  --color-forest-light: #e6dfd4;
-  --color-sage: #8fa68f;
-  --color-sage-light: #b3c9b0;
+  /* Viding 96 Palette — Sage, Dusty Rose, Cream, Warm Gold */
+  --color-deep: #f7f4ef;
+  --color-deep-light: #f0ebe3;
+  --color-forest: #e8e2d8;
+  --color-forest-light: #dfd8cc;
+  --color-sage: #7a9e7a;
+  --color-sage-light: #a3c4a0;
+  --color-sage-dark: #5c7e5c;
   --color-gold: #b08d57;
   --color-gold-light: #c9a96e;
   --color-gold-dark: #967740;
@@ -15,26 +16,29 @@
   --color-cream-dark: #5a5650;
   --color-rose: #c4918a;
   --color-rose-light: #dbb5af;
+  --color-rose-dark: #a8706a;
   --color-blush: #f0d9d5;
   --color-ivory: #fdfcfa;
+  --color-parket: #d4c5a9;
+  --color-parket-light: #e8dcc6;
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
 }
 
-/* Light elegant theme variables */
+/* Viding 96 variables */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(176, 141, 87, 0.2);
-  --glass-bg-light: rgba(255, 255, 255, 0.45);
-  --glass-border-light: rgba(176, 141, 87, 0.12);
-  --countdown-bg-start: rgba(255, 255, 255, 0.7);
-  --countdown-bg-end: rgba(250, 248, 245, 0.85);
-  --input-bg: rgba(255, 255, 255, 0.6);
-  --input-border: rgba(176, 141, 87, 0.25);
-  --dot-shadow: rgba(176, 141, 87, 0.35);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(176, 141, 87, 0.18);
+  --glass-bg-light: rgba(255, 255, 255, 0.5);
+  --glass-border-light: rgba(176, 141, 87, 0.1);
+  --countdown-bg-start: rgba(255, 255, 255, 0.75);
+  --countdown-bg-end: rgba(253, 252, 250, 0.9);
+  --input-bg: rgba(255, 255, 255, 0.65);
+  --input-border: rgba(176, 141, 87, 0.22);
+  --dot-shadow: rgba(176, 141, 87, 0.3);
   --scrollbar-track: var(--color-deep);
-  --scrollbar-thumb: var(--color-gold);
-  --scrollbar-hover: var(--color-gold-dark);
+  --scrollbar-thumb: var(--color-sage);
+  --scrollbar-hover: var(--color-sage-dark);
 }
 
 html {
@@ -77,6 +81,11 @@ body {
   justify-content: center;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.snap-end {
+  height: 0;
+  scroll-snap-align: end;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -513,11 +522,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--color-gold);
+  background: var(--color-sage);
   border: 3px solid var(--color-deep);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px var(--dot-shadow);
+  box-shadow: 0 0 20px rgba(122, 158, 122, 0.3);
 }
 
 /* ===== Countdown Flip ===== */
@@ -586,5 +595,277 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--scrollbar-track, var(--color-deep)); }
-::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb, var(--color-gold-dark)); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover, var(--color-gold)); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb, var(--color-sage)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover, var(--color-sage-dark)); }
+
+/* ===== Viding 96 — Section Styles ===== */
+
+/* Paper texture overlay */
+.paper-texture {
+  position: relative;
+}
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 197, 169, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(196, 145, 138, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(122, 158, 122, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Parket (wood) divider strip */
+.parket-divider {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-parket-light) 15%,
+    var(--color-parket) 30%,
+    var(--color-parket-light) 50%,
+    var(--color-parket) 70%,
+    var(--color-parket-light) 85%,
+    transparent
+  );
+  opacity: 0.5;
+  position: relative;
+}
+.parket-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    rgba(255,255,255,0.15) 2px,
+    transparent 4px
+  );
+}
+
+/* Watercolor wash for section backgrounds */
+.watercolor-wash {
+  position: relative;
+  overflow: hidden;
+}
+.watercolor-wash::after {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(122, 158, 122, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 80%, rgba(196, 145, 138, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(176, 141, 87, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floral border card — Event cards with floral edges */
+.floral-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(176, 141, 87, 0.15);
+  border-radius: 1.25rem;
+  position: relative;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+.floral-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-sage-light), var(--color-gold-light), var(--color-rose-light));
+  opacity: 0.6;
+}
+.floral-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-rose-light), var(--color-gold-light), var(--color-sage-light));
+  opacity: 0.6;
+}
+
+/* Arched photo frame */
+.arch-frame {
+  position: relative;
+  display: inline-block;
+}
+.arch-frame .arch-clip {
+  clip-path: ellipse(48% 48% at 50% 50%);
+  overflow: hidden;
+}
+.arch-frame .arch-border {
+  position: absolute;
+  inset: -4px;
+  border: 2px solid rgba(176, 141, 87, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.arch-frame .arch-glow {
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(122, 158, 122, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Invitation cover overlay */
+.cover-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(160deg, #f7f4ef 0%, #f0ebe3 40%, #e8e2d8 100%);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.cover-overlay.closing {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+/* Leaf watercolor accents */
+.leaf-accent {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.leaf-accent svg {
+  filter: blur(0.5px);
+}
+
+/* Rose watercolor accents */
+.rose-accent {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* ===== Floating Hearts Animation ===== */
+@keyframes heart-float {
+  0% {
+    transform: translateY(110vh) translateX(0) scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.7; }
+  50% { opacity: 0.5; }
+  90% { opacity: 0.3; }
+  100% {
+    transform: translateY(-10vh) translateX(80px) scale(1.2) rotate(25deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes heart-float {
+  0% {
+    -webkit-transform: translateY(110vh) translateX(0) scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.7; }
+  50% { opacity: 0.5; }
+  90% { opacity: 0.3; }
+  100% {
+    -webkit-transform: translateY(-10vh) translateX(80px) scale(1.2) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+@-webkit-keyframes heart-pulse {
+  0%, 100% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.15); }
+}
+
+.floating-heart {
+  position: absolute;
+  pointer-events: none;
+  animation: heart-float linear infinite;
+  -webkit-animation: heart-float linear infinite;
+}
+
+.floating-heart svg {
+  animation: heart-pulse 2s ease-in-out infinite;
+  -webkit-animation: heart-pulse 2s ease-in-out infinite;
+}
+
+/* ===== Tree Silhouette Backgrounds ===== */
+.tree-bg-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  max-width: 400px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+  will-change: transform;
+}
+
+.tree-bg-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  max-width: 400px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+  will-change: transform;
+  transform: scaleX(-1);
+}
+
+/* Foreground leaves — faster parallax */
+.leaf-foreground {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.15;
+  will-change: transform;
+}
+
+/* Vine hanging from top */
+@keyframes vine-sway {
+  0%, 100% { transform: rotate(-2deg) translateX(0); }
+  33% { transform: rotate(1deg) translateX(5px); }
+  66% { transform: rotate(-1deg) translateX(-3px); }
+}
+@-webkit-keyframes vine-sway {
+  0%, 100% { -webkit-transform: rotate(-2deg) translateX(0); }
+  33% { -webkit-transform: rotate(1deg) translateX(5px); }
+  66% { -webkit-transform: rotate(-1deg) translateX(-3px); }
+}
+
+.vine-hang {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  transform-origin: top center;
+  animation: vine-sway 8s ease-in-out infinite;
+  -webkit-animation: vine-sway 8s ease-in-out infinite;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+/* ===== Enhanced Parallax Depth ===== */
+.parallax-depth-1 { transform: translateZ(-300px) scale(2); }
+.parallax-depth-2 { transform: translateZ(-150px) scale(1.5); }
+.parallax-depth-3 { transform: translateZ(-50px) scale(1.15); }

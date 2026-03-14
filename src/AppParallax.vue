@@ -74,11 +74,11 @@ function openInvitation() {
       v-if="opened"
       @click="toggleMusic"
       class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-      style="background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(176,141,87,0.2);"
+      style="background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(122,158,122,0.3);"
       :title="isMuted ? 'Unmute' : 'Mute'"
     >
       <!-- Music playing icon -->
-      <svg v-if="!isMuted" class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+      <svg v-if="!isMuted" class="w-5 h-5 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
       </svg>
       <!-- Muted icon -->
@@ -96,21 +96,26 @@ function openInvitation() {
       <div class="snap-page-auto">
         <ParallaxCouple />
       </div>
+      <div class="snap-end"></div>
       <div class="snap-page-auto">
         <ParallaxTimeline />
       </div>
+      <div class="snap-end"></div>
       <div class="snap-page">
         <ParallaxCountdown />
       </div>
       <div class="snap-page-auto">
         <ParallaxRSVP />
       </div>
+      <div class="snap-end"></div>
       <div class="snap-page-auto">
         <ParallaxGuestbook />
       </div>
+      <div class="snap-end"></div>
       <div class="snap-page-auto">
         <ParallaxGift />
       </div>
+      <div class="snap-end"></div>
       <div class="snap-page">
         <ParallaxMap />
       </div>

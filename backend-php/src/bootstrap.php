@@ -15,10 +15,18 @@ function env_value(string $key, ?string $default = null): ?string
 
 function allow_cors(): void
 {
-    $allowedOrigin = env_value('FRONTEND_ORIGIN', '*');
+    $allowedOrigins = array_filter(array_map('trim', explode(',', env_value('FRONTEND_ORIGIN', '*'))));
+    $requestOrigin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
     header('Content-Type: application/json; charset=utf-8');
-    header('Access-Control-Allow-Origin: ' . $allowedOrigin);
+
+    if (in_array('*', $allowedOrigins, true)) {
+        header('Access-Control-Allow-Origin: *');
+    } elseif (in_array($requestOrigin, $allowedOrigins, true)) {
+        header('Access-Control-Allow-Origin: ' . $requestOrigin);
+        header('Vary: Origin');
+    }
+
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
 

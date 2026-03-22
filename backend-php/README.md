@@ -65,11 +65,11 @@ Body JSON:
 
 ## Deploy ke cPanel
 
-1. Upload isi folder `public/` ke document root domain backend.
-2. Upload folder `src/` ke luar document root atau tetap satu level yang bisa diakses oleh PHP lewat path relatif.
-3. Buat database MySQL dan import `initdb/01-schema.sql` lewat phpMyAdmin.
-4. Set environment variable jika hosting mendukungnya, atau sesuaikan pembacaan credential DB di `src/bootstrap.php`.
-5. Atur `FRONTEND_ORIGIN` ke domain frontend agar CORS mengizinkan request lintas domain.
+1. Upload seluruh file backend ke server Anda (termasuk folder `src/`, `public/`, dan file `.env`).
+2. Jika document root backend Anda tidak diarahkan ke `public/`, Anda bisa menambah file `.htaccess` di root (sejajar dengan `.env`) untuk routing masuk ke `public/`.
+3. Buat database MySQL dan import `initdb/01-schema.sql` lewat phpMyAdmin atau menu cPanel MySQL Database.
+4. Salin `.env.example` menjadi `.env` di direktori yang sama dengan folder `src/` Anda. Skrip PHP (`bootstrap.php`) sudah dikonfigurasi agar bisa membaca `.env` secara manual di cPanel.
+5. Atur `FRONTEND_ORIGIN` di dalam `.env` ke domain frontend agar CORS mengizinkan request lintas domain.
 
 ## Catatan
 

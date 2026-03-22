@@ -1,6 +1,8 @@
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 import config from './config.json'
+import { hasWeddingApi, requestWeddingApi } from './composables/useWeddingApi'
+
 import ParallaxHero from './components/parallax/ParallaxHero.vue'
 import ParallaxQuote from './components/parallax/ParallaxQuote.vue'
 import ParallaxCouple from './components/parallax/ParallaxCouple.vue'
@@ -31,6 +33,13 @@ function toggleMusic() {
 }
 
 const ANIMATED_SELECTORS = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-rotate, .clip-reveal'
+
+onMounted(() => {
+  if (hasWeddingApi()) {
+    // Panggil visit.php untuk logging IP dan Device
+    requestWeddingApi('/visit.php', { method: 'POST' }).catch((err) => console.error('[Tracking]', err))
+  }
+})
 
 function observeElements() {
   observer?.disconnect()
@@ -66,8 +75,8 @@ function openInvitation() {
 
 <template>
   <div ref="containerRef" class="snap-container bg-deep">
-    <!-- Background Music -->
-    <audio ref="audioRef" loop preload="auto" :src="config.song"></audio>
+    <!-- Background Music (Preload metadata for instant play, small file size prevents PageSpeed penalty) -->
+    <audio ref="audioRef" loop preload="metadata" :src="config.song"></audio>
 
     <!-- Music Toggle -->
     <button

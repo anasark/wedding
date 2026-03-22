@@ -1,6 +1,7 @@
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 import { useScrollReveal } from './composables/useScrollReveal'
+import { hasWeddingApi, requestWeddingApi } from './composables/useWeddingApi'
 import HeroSection from './components/HeroSection.vue'
 import QuoteSection from './components/QuoteSection.vue'
 import CoupleProfile from './components/CoupleProfile.vue'
@@ -15,6 +16,22 @@ import FooterSection from './components/Footer.vue'
 const opened = ref(false)
 
 useScrollReveal()
+
+onMounted(() => {
+  console.log('[DEBUG] App.vue is starting tracking process.')
+  console.log('[DEBUG] hasWeddingApi() result:', hasWeddingApi())
+
+  // Hanya track jika koneksi ke API backend dinamis dikonfigurasi
+  if (hasWeddingApi()) {
+    console.log('[DEBUG] API configured! Sending tracking request to /visit.php...')
+    // Gunakan nama /visit.php agar tidak diblokir oleh AdBlocker / Brave Shields
+    requestWeddingApi('/visit.php', { method: 'POST' })
+      .then((res) => console.log('[DEBUG] Tracking request returned:', res))
+      .catch((err) => console.error('[DEBUG] Tracking request threw an error:', err))
+  } else {
+    console.log('[DEBUG] hasWeddingApi returned false. Tracking skipped.')
+  }
+})
 
 function openInvitation() {
   opened.value = true

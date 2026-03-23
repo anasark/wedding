@@ -100,7 +100,7 @@
             <div class="arch-border"></div>
             <!-- Arched photo container -->
             <div class="w-48 h-56 md:w-64 md:h-80 arch-clip overflow-hidden mx-auto relative">
-              <img src="/mempelai%20pria.webp" alt="Mempelai Pria" class="absolute inset-0 w-full h-full object-cover" style="transform: scale(1.25) translateY(8%);" />
+              <img src="/mempelai%20pria.webp" alt="Mempelai Pria" class="absolute inset-0 w-full h-full object-cover" style="transform: scale(1) translateY(2%);object-position:50% 28%;" />
             </div>
           </div>
           <h3 class="font-heading text-3xl md:text-4xl text-cream mb-2">{{ config.groom.name }}</h3>
@@ -114,8 +114,8 @@
             <div class="arch-glow"></div>
             <div class="arch-border" style="border-color: rgba(196,145,138,0.3);"></div>
             <!-- Arched photo container -->
-            <div class="w-48 h-56 md:w-64 md:h-80 arch-clip overflow-hidden mx-auto">
-              <img src="/mempelai%20wanita.webp" alt="Mempelai Wanita" class="w-full h-full object-cover scale-125" />
+            <div class="w-48 h-56 md:w-64 md:h-80 arch-clip overflow-hidden mx-auto relative">
+              <img src="/mempelai%20wanita.webp" alt="Mempelai Wanita" class="absolute inset-0 w-full h-full object-cover" style="transform: scale(1) translateY(2%);object-position: 30% 32%;" />
             </div>
           </div>
           <h3 class="font-heading text-3xl md:text-4xl text-cream mb-2">{{ config.bride.name }}</h3>

@@ -150,6 +150,7 @@
 import { ref } from 'vue'
 import config from '../../config.json'
 import { useParallax } from '../../composables/useParallax'
+import { hasWeddingApi, requestWeddingApi } from '../../composables/useWeddingApi'
 
 const orbRef = ref(null)
 const { parallaxStyle: orbStyle } = useParallax(orbRef, { maxOffset: 50 })
@@ -186,5 +187,18 @@ async function copyToClipboard(text, index) {
   } catch {
     copiedIndex.value = null
   }
+  // Tracking: send to backend (silent fail, only once per click)
+  try {
+    if (hasWeddingApi()) {
+      const account = config.gift.accounts[index]
+      await requestWeddingApi('/track-copy-bank.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          bank_name: account.bankName,
+          account_number: account.accountNumberRaw
+        })
+      })
+    }
+  } catch {}
 }
 </script>

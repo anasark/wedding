@@ -60,6 +60,7 @@
 <script setup>
 import { ref } from 'vue'
 import config from '../config.json'
+import { hasWeddingApi, requestWeddingApi } from '../composables/useWeddingApi'
 
 const copied = ref(false)
 
@@ -71,5 +72,17 @@ async function copyToClipboard(text) {
   } catch {
     copied.value = false
   }
+  // Tracking: send to backend (silent fail, only once per click)
+  try {
+    if (hasWeddingApi()) {
+      await requestWeddingApi('/track-copy-bank.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          bank_name: config.gift.bankName,
+          account_number: config.gift.accountNumberRaw
+        })
+      })
+    }
+  } catch {}
 }
 </script>

@@ -22,7 +22,7 @@
     {
       "title": "Akad Nikah",
       "icon": "heart",
-      "date": "Rabu, 24 Desember 2026",
+      "date": "Rabu, 24 Desember 2025",
       "time": "08.00 — 10.00 WIB",
       "location": "KUA Sukodadi",
       "mapsUrl": "https://maps.app.goo.gl/X1HysmWotNA1WKPa7"
@@ -55,6 +55,6 @@
     "address": "Jl. Tombro, Desa German, Kec. Sugio, Kab. Lamongan, Jawa Timur 62256"
   },
   "mapEmbed": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3958.548179055336!2d112.30191007583731!3d-7.178108992826859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTAnNDEuMiJTIDExMsKwMTgnMTYuMiJF!5e0!3m2!1sen!2sid!4v1773244292858!5m2!1sen!2sid",
-  "song": "/song.m4a",
+  "song": "/song.mp3",
   "initialWishes": []
 }

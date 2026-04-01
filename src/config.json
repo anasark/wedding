@@ -11,9 +11,9 @@
     "parentOf": "Putri dari",
     "parents": "Bpk. Sudjadi Zainal Abidin (Alm) & Ibu Siti Rohayati"
   },
-  "date": "Sabtu, 28 Maret 2026",
-  "dateShort": "28 · 03 · 2026",
-  "countdownTarget": "2026-03-28T08:00:00",
+  "date": "Minggu, 5 April 2026",
+  "dateShort": "05 · 04 · 2026",
+  "countdownTarget": "2026-04-05T08:00:00",
   "quote": {
     "text": "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.",
     "source": "QS. Ar-Rum 30:21"
@@ -30,11 +30,11 @@
     {
       "title": "Resepsi",
       "icon": "sparkles",
-      "date": "Sabtu, 28 Maret 2026",
+      "date": "Minggu, 5 April 2026",
       "time": "10.00 WIB - Selesai",
-      "location": "German",
-      "mapsUrl": "https://maps.app.goo.gl/YfJ8b4rDxgtZX9Aw8",
-      "calendarUrl": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi%20Pernikahan%20-%20Anas%20%26%20Rizka&dates=20260328T030000Z/20260328T070000Z&details=Resepsi%20Pernikahan%20Anas%20Abdur%20Rohim%20%26%20Rizka%20Amaliyah%20Maghfiroh&location=German%2C%20Sugio%2C%20Lamongan"
+      "location": "Sukolilo, Sukodadi, Lamongan",
+      "mapsUrl": "https://maps.app.goo.gl/WZexvnZSwFhRbAFR8",
+      "calendarUrl": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi%20Pernikahan%20-%20Anas%20%26%20Rizka&dates=20260405T030000Z/20260405T070000Z&details=Resepsi%20Pernikahan%20Anas%20Abdur%20Rohim%20%26%20Rizka%20Amaliyah%20Maghfiroh&location=Sukolilo%2C%20Sukodadi%2C%20Lamongan"
     }
   ],
   "gift": {
@@ -52,9 +52,9 @@
         "accountHolder": "Rizka Amaliyah Maghfiroh"
       }
     ],
-    "address": "Jl. Tombro, Desa German, Kec. Sugio, Kab. Lamongan, Jawa Timur 62256"
+    "address": "Jl. Urip Sumoharjo No.108, Sukolilo, Kec. Sukodadi, Kabupaten Lamongan, Jawa Timur 62253"
   },
-  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3958.548179055336!2d112.30191007583731!3d-7.178108992826859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTAnNDEuMiJTIDExMsKwMTgnMTYuMiJF!5e0!3m2!1sen!2sid!4v1773244292858!5m2!1sen!2sid",
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.83683725125277!2d112.33333363034848!3d-7.086405624061571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77f22aac1c9ee7%3A0xc0593460ef558ec4!2sW87M%2BC9G%2C%20Sukolilo%2C%20Kec.%20Sukodadi%2C%20Kabupaten%20Lamongan%2C%20Jawa%20Timur%2062253!5e0!3m2!1sen!2sid!4v1775045199450!5m2!1sen!2sid",
   "song": "/song.mp3",
   "initialWishes": []
 }

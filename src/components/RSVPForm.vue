@@ -12,7 +12,7 @@
           <div>
             <label class="block text-charcoal text-sm font-medium mb-2">Nama Lengkap</label>
             <input
-              v-model="form.name"
+              v-model="name"
               type="text"
               required
               placeholder="Masukkan nama Anda"
@@ -86,11 +86,12 @@
 import { ref } from 'vue'
 import { readStoredJson, writeStoredJson } from '../composables/useJsonStorage'
 import { hasWeddingApi, requestWeddingApi } from '../composables/useWeddingApi'
+import { useGuestName } from '../composables/useGuestName'
 
 const RSVP_STORAGE_KEY = 'wedding:rsvpResponses'
 
+const name = useGuestName()
 const form = ref({
-  name: '',
   attendance: 'yes',
   guests: '1'
 })
@@ -107,7 +108,7 @@ async function submitForm() {
   errorMessage.value = ''
 
   const payload = {
-    name: form.value.name.trim(),
+    name: name.value.trim(),
     attendance: form.value.attendance,
     guests: form.value.attendance === 'yes' ? Number(form.value.guests) : 0,
   }

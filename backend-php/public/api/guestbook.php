@@ -13,7 +13,7 @@ try {
 
     if ($method === 'GET') {
         $statement = $pdo->query(
-            'SELECT id, name, message, created_at AS createdAt FROM guestbook_wishes ORDER BY created_at DESC, id DESC'
+            'SELECT id, name, message, created_at AS createdAt FROM guestbook_wishes WHERE DATE(created_at) >= CURDATE() ORDER BY created_at DESC, id DESC'
         );
 
         json_response(['data' => $statement->fetchAll()]);

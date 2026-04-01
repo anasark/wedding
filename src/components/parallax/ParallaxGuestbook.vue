@@ -97,7 +97,7 @@
       <form @submit.prevent="addWish" class="reveal floral-card p-6 md:p-8 mb-8">
         <div class="space-y-4">
           <input
-            v-model="newWish.name"
+            v-model="name"
             type="text"
             required
             placeholder="Nama Anda"
@@ -154,9 +154,11 @@ import { onMounted, ref } from 'vue'
 import config from '../../config.json'
 import { readStoredJson, writeStoredJson } from '../../composables/useJsonStorage'
 import { hasWeddingApi, requestWeddingApi } from '../../composables/useWeddingApi'
+import { useGuestName } from '../../composables/useGuestName'
 
 const GUESTBOOK_STORAGE_KEY = 'wedding:guestbookWishes'
 
+const name = useGuestName()
 const newWish = ref({ name: '', message: '' })
 
 const petalColors = ['text-rose', 'text-gold', 'text-sage']
@@ -203,7 +205,7 @@ async function addWish() {
   errorMessage.value = ''
   const wish = {
     id: nextId++,
-    name: newWish.value.name.trim(),
+    name: name.value.trim(),
     message: newWish.value.message.trim(),
     createdAt: new Date().toISOString(),
   }
@@ -219,6 +221,7 @@ async function addWish() {
       writeStoredJson(GUESTBOOK_STORAGE_KEY, wishes.value)
     }
     newWish.value = { name: '', message: '' }
+    name.value = ''
   } catch (error) {
     errorMessage.value = error instanceof Error ? error.message : 'Ucapan gagal dikirim.'
   } finally {

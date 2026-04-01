@@ -10,7 +10,7 @@
       <form @submit.prevent="addWish" class="fade-in bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gold/10 mb-8 card-3d relative overflow-hidden">
         <div class="space-y-4">
           <input
-            v-model="newWish.name"
+            v-model="name"
             type="text"
             required
             placeholder="Your name"
@@ -64,9 +64,11 @@ import { onMounted, ref } from 'vue'
 import config from '../config.json'
 import { readStoredJson, writeStoredJson } from '../composables/useJsonStorage'
 import { hasWeddingApi, requestWeddingApi } from '../composables/useWeddingApi'
+import { useGuestName } from '../composables/useGuestName'
 
 const GUESTBOOK_STORAGE_KEY = 'wedding:guestbookWishes'
 
+const name = useGuestName()
 const newWish = ref({ name: '', message: '' })
 
 const wishes = ref(readStoredJson(GUESTBOOK_STORAGE_KEY, [...config.initialWishes]))
@@ -97,7 +99,7 @@ async function addWish() {
 
   const wish = {
     id: nextId++,
-    name: newWish.value.name.trim(),
+    name: name.value.trim(),
     message: newWish.value.message.trim(),
     createdAt: new Date().toISOString()
   }
@@ -121,6 +123,7 @@ async function addWish() {
     }
 
     newWish.value = { name: '', message: '' }
+    name.value = ''
   } catch (error) {
     console.error('Kirim ucapan API error:', error)
     // Walaupun fetch gagal (misal kena CORS), tetap kita tampilkan di UI (offline fallback) 

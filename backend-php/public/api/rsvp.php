@@ -13,7 +13,7 @@ try {
 
     if ($method === 'GET') {
         $statement = $pdo->query(
-            'SELECT id, name, attendance, guests, submitted_at AS submittedAt FROM rsvp_responses ORDER BY submitted_at DESC, id DESC'
+            'SELECT id, name, attendance, guests, submitted_at AS submittedAt FROM rsvp_responses WHERE DATE(submitted_at) >= CURDATE() ORDER BY submitted_at DESC, id DESC'
         );
 
         json_response(['data' => $statement->fetchAll()]);

@@ -99,7 +99,7 @@
           <div>
             <label class="block text-cream/70 text-sm font-medium mb-2">Nama Lengkap</label>
             <input
-              v-model="form.name"
+              v-model="name"
               type="text"
               required
               placeholder="Masukkan nama Anda"
@@ -176,6 +176,7 @@ import { ref } from 'vue'
 import { useParallax } from '../../composables/useParallax'
 import { readStoredJson, writeStoredJson } from '../../composables/useJsonStorage'
 import { hasWeddingApi, requestWeddingApi } from '../../composables/useWeddingApi'
+import { useGuestName } from '../../composables/useGuestName'
 
 const RSVP_STORAGE_KEY = 'wedding:rsvpResponses'
 
@@ -204,7 +205,8 @@ const hearts = Array.from({ length: 6 }, (_, i) => ({
   color: heartColors[i % 3],
 }))
 
-const form = ref({ name: '', attendance: 'yes', guests: '1' })
+const name = useGuestName()
+const form = ref({ attendance: 'yes', guests: '1' })
 const submitted = ref(false)
 const rsvpResponses = ref(readStoredJson(RSVP_STORAGE_KEY, []))
 const isSubmitting = ref(false)
@@ -217,7 +219,7 @@ async function submitForm() {
   errorMessage.value = ''
 
   const payload = {
-    name: form.value.name.trim(),
+    name: name.value.trim(),
     attendance: form.value.attendance,
     guests: form.value.attendance === 'yes' ? Number(form.value.guests) : 0,
   }
